@@ -134,10 +134,10 @@ export default function Products({ allProducts }) {
                     <div class="mt-2 mb-5 flex items-center justify-between">
                       <p>
                         <span class="text-3xl font-bold text-slate-900">
-                          ${product.price}
+                          ₹{product.price}
                         </span>
                         <span class="text-sm text-slate-900 line-through">
-                          $
+                          ₹
                           {(product.price + (product.price * 39) / 100).toFixed(
                             2
                           )}
