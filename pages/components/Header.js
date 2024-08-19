@@ -82,7 +82,7 @@ export default function Header() {
                     href="/categories"
                   >
                     <option value="0">Categories</option>
-                    <option value="1">Shoes</option>
+                    <option value="1">Sunglasses</option>
                   </select>
                 </li>
               </ul>
