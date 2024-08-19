@@ -70,15 +70,15 @@ export default function ProductPage({ product }) {
               </div>
               <div class="mb-4">
                 <span class="font-bold text-gray-700 dark:text-gray-300">
-                  Colors:
+                  Brand: {product.brand}
                 </span>
-                <div class="flex items-center mt-2">
-                  <button class="w-6 h-6 rounded-full bg-gray-800 dark:bg-gray-200 mr-2"></button>
-                  <button class="w-6 h-6 rounded-full bg-red-500 dark:bg-red-700 mr-2"></button>
-                  <button class="w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-700 mr-2"></button>
-                  <button class="w-6 h-6 rounded-full bg-yellow-500 dark:bg-yellow-700 mr-2"></button>
-                </div>
               </div>
+              <div class="mb-4">
+                <span class="font-bold text-gray-700 dark:text-gray-300">
+                  Color: {product.colors}
+                </span>
+              </div>
+
               <div>
                 <span class="font-bold text-gray-700 dark:text-gray-300">
                   Product Description:
