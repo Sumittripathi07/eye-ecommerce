@@ -17,6 +17,12 @@ export default function Header() {
     setCurrentPath(window.location.pathname);
   }, []);
 
+  function fetchCategories() {
+    axios.get("/api/categories").then((result) => {
+      setCategories(result.data);
+    });
+  }
+
   const toggleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
   };
