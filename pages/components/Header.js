@@ -1,4 +1,5 @@
 import Link from "next/link";
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../lib/CartContext";
 import { useRouter } from "next/router";
@@ -91,8 +92,13 @@ export default function Header() {
                     href="/categories"
                   >
                     <option value="0">Categories</option>
-                    {categories.map()}
-                    <option value="1">Sunglasses</option>
+
+                    {categories.length > 0 &&
+                      categories.map((category) => (
+                        <option key={category._id} value={category._id}>
+                          {category.name}
+                        </option>
+                      ))}
                   </select>
                 </li>
               </ul>
