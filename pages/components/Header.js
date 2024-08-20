@@ -7,6 +7,8 @@ import { signOut, useSession } from "next-auth/react";
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState("");
+  const [categories, setCategories] = useState([]);
+
   const { cartProducts } = useContext(CartContext);
   const router = useRouter();
   const { pathname } = router;
@@ -15,6 +17,7 @@ export default function Header() {
   useEffect(() => {
     // Update the currentPath state on client side
     setCurrentPath(window.location.pathname);
+    fetchCategories();
   }, []);
 
   function fetchCategories() {
@@ -88,6 +91,7 @@ export default function Header() {
                     href="/categories"
                   >
                     <option value="0">Categories</option>
+                    {categories.map()}
                     <option value="1">Sunglasses</option>
                   </select>
                 </li>
