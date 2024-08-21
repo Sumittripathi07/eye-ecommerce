@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { CartContextProvider } from "../lib/CartContext";
 import { SessionProvider } from "next-auth/react";
 import { Toaster } from "react-hot-toast";
+import CanvasCursor from "./components/other/canvas-cursor";
 
 const inter = Poppins({
   subsets: ["latin"],
@@ -16,6 +17,7 @@ export default function App({
 }) {
   return (
     <>
+      <CanvasCursor />
       <SessionProvider session={session}>
         <CartContextProvider>
           <main
