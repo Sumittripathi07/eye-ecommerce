@@ -84,7 +84,7 @@ export default function Header() {
                   </Link>
                 </li>
 
-                <li>
+                {/* <li>
                   <select
                     className={`text-accent transition hover:text-accent/75 ${
                       pathname === "/categories" ? "text-primary" : ""
@@ -100,7 +100,7 @@ export default function Header() {
                         </option>
                       ))}
                   </select>
-                </li>
+                </li> */}
               </ul>
             </nav>
 
