@@ -118,13 +118,13 @@ export default function Header() {
               ) : (
                 <div className="pr-4 border-r sm:flex sm:gap-2 border-primary">
                   <Link
-                    className="hidden font-medium  text-md text-text md:flex"
+                    className="hidden font-medium text-md text-text md:flex"
                     href="/"
                   >
                     Account
                   </Link>
                   <Link
-                    className="hidden font-medium  text-md text-text max-md:flex md:hidden"
+                    className="hidden font-medium text-md text-text max-md:flex md:hidden"
                     href="/"
                   >
                     <svg
