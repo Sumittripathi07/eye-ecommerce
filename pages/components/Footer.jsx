@@ -1,20 +1,22 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-gray-900 text-white py-8 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between">
+      <footer className="px-4 py-8 text-white bg-gray-900">
+        <div className="flex flex-col justify-between mx-auto max-w-7xl md:flex-row">
           <div className="flex flex-col mb-6 md:mb-0">
-            {/* <h1 className="text-2xl font-bold mb-2">[COMPANY LOGO]</h1> */}
-            <p className="mb-6 text-xl">Best website for various stylish sunglasses</p>
-            <p className="text-xl"> 
+            {/* <h1 className="mb-2 text-2xl font-bold">[COMPANY LOGO]</h1> */}
+            <p className="mb-6 text-xl">
+              Best website for various stylish sunglasses
+            </p>
+            <p className="text-xl">
               Reach us at{" "}
               <a href="" className="text-blue-400">
                 Company Website Link
               </a>
             </p>
-            <div className="flex space-x-4 mt-4">
+            <div className="flex mt-4 space-x-4">
               <a
                 href="https://www.facebook.com"
                 className="hover:text-gray-400"
@@ -34,44 +36,44 @@ const Footer = () => {
                 <i className="fab fa-linkedin-in fa-xl"></i>
               </a>
               <a href="https://www.twitter.com" className="hover:text-gray-400">
-              <i class="fa-brands fa-twitter fa-xl"></i>
+                <i class="fa-brands fa-twitter fa-xl"></i>
               </a>
             </div>
           </div>
           <div className="flex flex-col mb-6 md:mb-0">
-            <h2 className="text-2xl font-semibold mb-2">Quick Links</h2>
+            <h2 className="mb-2 text-2xl font-semibold">Quick Links</h2>
           </div>
           <div className="flex flex-col">
             <div className="flex items-center mb-2">
-              <i className="fas fa-phone-alt mr-2 fa-xl"></i>
+              <i className="mr-2 fas fa-phone-alt fa-xl"></i>
               <span className="text-lg">+91-8448288830</span>
             </div>
             <div className="flex items-center mb-2 l">
-              <i className="fas fa-envelope mr-2 fa-xl"></i>
-              <a href="mailto:hello@zyod.com" className="text-blue-400 text-lg">
+              <i className="mr-2 fas fa-envelope fa-xl"></i>
+              <a href="mailto:hello@zyod.com" className="text-lg text-blue-400">
                 dayyan.shaikh973@gmail.com
               </a>
             </div>
             <div className="flex items-center mb-2">
-              <i className="fas fa-map-marker-alt mr-2 fa-xl"></i>
+              <i className="mr-2 fas fa-map-marker-alt fa-xl"></i>
               <span className="text-lg">
-                Krushna Nagr - 706, Tower C,Unitech Cyberpark, <br />Sector 39, Gurgaon,
-                122001
+                Krushna Nagr - 706, Tower C,Unitech Cyberpark, <br />
+                Sector 39, Gurgaon, 122001
               </span>
             </div>
           </div>
         </div>
         <div className="mt-6 text-center">
-          <a href="#" className="hover:text-gray-400 text-lg">
+          <a href="#" className="text-lg hover:text-gray-400">
             Privacy Policy
           </a>
         </div>
-        <div className="mt-4 text-center text-gray-500 text-lg">
+        <div className="mt-4 text-lg text-center text-gray-500">
           <p>Copyright © 2023-2024 Powered By Optics Wala.</p>
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

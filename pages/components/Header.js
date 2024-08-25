@@ -36,10 +36,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-white sticky top-0 z-40 w-full px-2 md:px-4">
-        <div className="mx-auto flex h-16 max-w-screen-2xl items-center gap-8 border-b border-primary border-opacity-40">
+      <header className="sticky top-0 z-40 w-full px-2 bg-white md:px-4">
+        <div className="flex items-center h-16 gap-8 mx-auto border-b max-w-screen-2xl border-primary border-opacity-40">
           <Link
-            className="flex gap-1 items-center text-text font-medium text-lg hover:text-primary "
+            className="flex items-center gap-1 text-lg font-medium text-text hover:text-primary "
             href="/"
           >
             <svg
@@ -59,7 +59,7 @@ export default function Header() {
             <span> / Eyeware</span>
           </Link>
 
-          <div className="flex flex-1 items-center justify-end md:justify-between">
+          <div className="flex items-center justify-end flex-1 md:justify-between">
             <nav aria-label="Global" className="hidden md:block">
               <ul className="flex items-center gap-6 text-md">
                 <li>
@@ -106,7 +106,7 @@ export default function Header() {
 
             <div className="flex items-center gap-2">
               {session ? (
-                <div className="sm:flex sm:gap-2 border-r border-primary pr-4">
+                <div className="pr-4 border-r sm:flex sm:gap-2 border-primary">
                   <div class="h-9 w-9">
                     <img
                       class="h-full w-full rounded-full object-cover object-center"
@@ -116,15 +116,15 @@ export default function Header() {
                   </div>
                 </div>
               ) : (
-                <div className="sm:flex sm:gap-2 border-r border-primary pr-4">
+                <div className="pr-4 border-r sm:flex sm:gap-2 border-primary">
                   <Link
-                    className=" text-md font-medium text-text hidden md:flex"
+                    className="hidden font-medium  text-md text-text md:flex"
                     href="/"
                   >
                     Account
                   </Link>
                   <Link
-                    className=" text-md font-medium text-text hidden max-md:flex md:hidden"
+                    className="hidden font-medium  text-md text-text max-md:flex md:hidden"
                     href="/"
                   >
                     <svg
@@ -145,8 +145,8 @@ export default function Header() {
                 </div>
               )}
 
-              <div className="ml-4 flow-root lg:ml-4">
-                <Link href="/cart" className="group -m-2 flex items-center p-2">
+              <div className="flow-root ml-4 lg:ml-4">
+                <Link href="/cart" className="flex items-center p-2 -m-2 group">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -162,7 +162,7 @@ export default function Header() {
                     />
                   </svg>
 
-                  <span className="ml-2 text-md text-primary font-bold group-hover:text-text">
+                  <span className="ml-2 font-bold text-md text-primary group-hover:text-text">
                     {cartProducts.length}
                   </span>
                   <span className="sr-only">items in cart, view bag</span>
@@ -173,13 +173,13 @@ export default function Header() {
               <div className="block mr-0 md:hidden">
                 <button
                   onClick={toggleMobileNav}
-                  className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                  className="p-2 text-gray-600 transition bg-gray-100 rounded hover:text-gray-600/75"
                 >
                   {isMobileNavOpen ? (
                     // X icon for close
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
+                      className="w-5 h-5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -195,7 +195,7 @@ export default function Header() {
                     // Menu icon for open
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
+                      className="w-5 h-5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -212,7 +212,7 @@ export default function Header() {
               </div>
 
               {isMobileNavOpen && (
-                <div className="md:hidden absolute top-24 right-0 bg-white border border-zinc-200 rounded shadow-lg p-6 text-lg ">
+                <div className="absolute right-0 p-6 text-lg bg-white border rounded shadow-lg md:hidden top-24 border-zinc-200 ">
                   <nav aria-label="Global">
                     <ul className="flex flex-col items-start gap-6 text-md">
                       <li>
@@ -265,7 +265,7 @@ export default function Header() {
         </div>
       </header>
 
-      <header className="md:hidden w-full flex justify-around items-center my-3 border-b fixed top-12 bg-gray-200 z-50">
+      <header className="fixed z-50 flex items-center justify-around w-full my-3 bg-gray-200 border-b md:hidden top-12">
         <div className="inline-flex gap-8 p-1">
           <Link
             href={"/"}
