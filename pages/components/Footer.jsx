@@ -51,7 +51,7 @@ const Footer = () => {
             <div className="flex items-center mb-2 l">
               <i className="mr-2 fas fa-envelope fa-xl"></i>
               <a href="mailto:hello@zyod.com" className="text-lg text-blue-400">
-                dayyan.shaikh973@gmail.com
+                eyeware_ecommerce@gmail.com
               </a>
             </div>
             <div className="flex items-center mb-2">
@@ -69,7 +69,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="mt-4 text-lg text-center text-gray-500">
-          <p>Copyright © 2023-2024 Powered By Optics Wala.</p>
+          <p>Copyright © 2023-2024 Powered By Eyeware Ecommerce.</p>
         </div>
       </footer>
     </div>
