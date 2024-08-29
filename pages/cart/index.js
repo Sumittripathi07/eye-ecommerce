@@ -105,16 +105,16 @@ export default function Cart() {
   if (session) {
     return (
       <>
-        <section className="flex justify-between max-md:flex-col space-x-4 ">
-          <div className=" md:w-2/3  px-4">
-            <div className=" mt-16 md:mt-6 ">
-              <header className="text-center flex justify-between w-full">
+        <section className="flex justify-between space-x-4 max-md:flex-col ">
+          <div className="px-4  md:w-2/3">
+            <div className="mt-16  md:mt-6">
+              <header className="flex justify-between w-full text-center">
                 <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">
                   Your Cart
                 </h1>
               </header>
               {loading ? (
-                <div className="flex justify-center items-center h-screen">
+                <div className="flex items-center justify-center h-screen">
                   <Spinner />
                 </div>
               ) : !products?.length ? (
@@ -125,15 +125,15 @@ export default function Cart() {
                     products.map((product) => (
                       <div key={product._id} className="mt-8">
                         <ul className="space-y-4">
-                          <li className="flex items-center gap-4 justify-between">
+                          <li className="flex items-center justify-between gap-4">
                             <img
                               src={product.images[0]}
                               alt=""
-                              className="h-16 w-16 rounded object-cover"
+                              className="object-cover w-16 h-16 rounded"
                             />
 
                             <div>
-                              <h3 className="text-md text-text max-w-md">
+                              <h3 className="max-w-md text-md text-text">
                                 {product.title}
                               </h3>
 
@@ -156,7 +156,7 @@ export default function Cart() {
                               <div className="flex items-center gap-1">
                                 <button
                                   type="button"
-                                  className="w-10 h-10 leading-10 text-text transition hover:opacity-75 border "
+                                  className="w-10 h-10 leading-10 transition border text-text hover:opacity-75 "
                                   onClick={() => decreaseProduct(product._id)}
                                 >
                                   -
@@ -175,7 +175,7 @@ export default function Cart() {
 
                                 <button
                                   type="button"
-                                  className="w-10 h-10 leading-10 text-text transition hover:opacity-75 border"
+                                  className="w-10 h-10 leading-10 transition border text-text hover:opacity-75"
                                   onClick={() => increaseProduct(product._id)}
                                 >
                                   +
@@ -243,10 +243,10 @@ export default function Cart() {
                       </label>
                     </div>
                   </form>
-                  <div className="mt-8 flex justify-end border-t border-gray-100 pt-8">
-                    <div className=" max-w-md space-y-4">
+                  <div className="flex justify-end pt-8 mt-8 border-t border-gray-100">
+                    <div className="max-w-md space-y-4 ">
                       <dl className="space-y-0.5 text-md text-gray-700">
-                        <div className="flex justify-end text-red-400 border-b mb-3">
+                        <div className="flex justify-end mb-3 text-red-400 border-b">
                           <button onClick={deleteCart}>Clear Cart</button>
                         </div>
                         <div className="flex justify-between">
@@ -301,12 +301,12 @@ export default function Cart() {
           {!products.length ? (
             ""
           ) : (
-            <div className="md:1/3 mt-16 md:mt-6">
-              <header className="text-start flex flex-col w-full">
+            <div className="mt-16 md:1/3 md:mt-6">
+              <header className="flex flex-col w-full text-start">
                 <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">
                   Shipping details
                 </h1>
-                <p className="mt-2 text-text text-lg">
+                <p className="mt-2 text-lg text-text">
                   We use your account details for shipping.
                 </p>
               </header>
@@ -396,7 +396,7 @@ export default function Cart() {
                     <div class="col-span-12 text-center w-full">
                       <button
                         onClick={stripeCheckout}
-                        className="disabled block rounded bg-secondary px-5 py-3 text-md text-text transition hover:bg-purple-300 w-full"
+                        className="block w-full px-5 py-3 transition rounded disabled bg-secondary text-md text-text hover:bg-purple-300"
                       >
                         Checkout
                       </button>
@@ -415,13 +415,13 @@ export default function Cart() {
     <>
       <div className="grid h-screen px-4 bg-white place-content-center">
         <div className="text-center">
-          <p className="mt-4 text-text text-2xl">
+          <p className="mt-4 text-2xl text-text">
             You should sign Up to view cart Items
           </p>
 
           <button
             onClick={() => signIn("google")}
-            className="inline-block px-5 py-3 mt-6 text-sm font-medium text-text bg-primary rounded hover:bg-primary focus:outline-none focus:ring"
+            className="inline-block px-5 py-3 mt-6 text-sm font-medium rounded text-text bg-primary hover:bg-primary focus:outline-none focus:ring"
           >
             Login / Register
           </button>

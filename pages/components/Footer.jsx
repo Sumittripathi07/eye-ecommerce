@@ -36,7 +36,7 @@ const Footer = () => {
                 <i className="fab fa-linkedin-in fa-xl"></i>
               </a>
               <a href="https://www.twitter.com" className="hover:text-gray-400">
-                <i class="fa-brands fa-twitter fa-xl"></i>
+                <i className="fa-brands fa-twitter fa-xl"></i>
               </a>
             </div>
           </div>
