@@ -14,10 +14,10 @@ export default function Home({
     <main className={`min-h-screen p-4 bg-background `}>
       <Hero product={featuredProduct} />
 
-      <hr class="my-1 h-px border-0 bg-gray-300" />
+      <hr className="h-px my-1 bg-gray-300 border-0" />
 
       <Products products={newProducts} />
-      <hr class="my-1 h-px border-0 bg-gray-300" />
+      <hr className="h-px my-1 bg-gray-300 border-0" />
       <Collection product={collectionProduct1} />
     </main>
   );

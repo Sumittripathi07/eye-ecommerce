@@ -106,8 +106,8 @@ export default function Cart() {
     return (
       <>
         <section className="flex justify-between space-x-4 max-md:flex-col ">
-          <div className="px-4  md:w-2/3">
-            <div className="mt-16  md:mt-6">
+          <div className="px-4 md:w-2/3">
+            <div className="mt-16 md:mt-6">
               <header className="flex justify-between w-full text-center">
                 <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">
                   Your Cart
