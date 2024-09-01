@@ -20,6 +20,8 @@ export default function Cart() {
   const [loading, setLoading] = useState(true);
   const { data: session } = useSession();
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [paymentDetail, setPaymentDetail] = useState();
 
   useEffect(() => {
     setLoading(true);
@@ -75,31 +77,73 @@ export default function Cart() {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  async function stripeCheckout() {
-    const response = await axios.post("/api/checkout", {
-      email: session.user.email,
-      name: session.user.name,
-      address,
-      country,
-      zip,
-      city,
-      cartProducts,
-    });
+  async function razorpayCheckout(params) {
+    setIsProcessing(true);
+    const AMOUNT = total;
+    try {
+      console.log("01");
 
-    if (response) {
-      // window.location = response.data.url
-      toast.success("Order placed successfully");
-      setIsSuccess(true);
-      clearCart();
-    } else {
-      toast.error("An error occured!!");
+      const response = await fetch("/api/razorpayCheckout", {
+        headers: { "Content-Type": "application/json" },
+        method: "POST",
+        body: JSON.stringify({ total: total }),
+      });
+      const data = await response.json();
+      console.log("02");
+
+      const options = {
+        key: process.env.RAZORPAY_KEY_ID,
+        amount: AMOUNT * 100,
+        currency: "INR",
+        name: "Eyeware Ecommerce",
+        description: "Test",
+        order_id: data.orderId,
+        handler: async function (res) {
+          console.log("Payment Successful", res);
+          setPaymentDetail(res);
+
+          const response = await axios.post("/api/checkout", {
+            email: session.user.email,
+            name: session.user.name,
+            address,
+            country,
+            zip,
+            city,
+            cartProducts,
+          });
+
+          if (response) {
+            // window.location = response.data.url
+            toast.success("Order placed successfully");
+            setIsSuccess(true);
+            clearCart();
+          } else {
+            toast.error("An error occured!!");
+          }
+        },
+        prefill: {
+          name: "JOHN TRIPATHI",
+          email: "john@gmail.com",
+          contact: "999999999",
+        },
+        theme: {
+          color: "#3399c",
+        },
+      };
+
+      const rzp1 = new window.Razorpay(options);
+      rzp1.open();
+    } catch (error) {
+      console.error("Payment Faield", error);
+    } finally {
+      setIsProcessing(false);
     }
   }
 
   if (isSuccess) {
     return (
       <>
-        <Success />
+        <Success paymentDetail={paymentDetail} />
       </>
     );
   }
@@ -262,7 +306,7 @@ export default function Cart() {
 
                         <strike className="flex justify-between">
                           <dt>delivery</dt>
-                          <dd>₹. {formatPrice(total / 1000)}</dd>
+                          <dd>₹. 60</dd>
                         </strike>
 
                         <div className="flex justify-between !text-base font-medium">
@@ -401,10 +445,11 @@ export default function Cart() {
                     </div>
                     <div className="w-full col-span-12 text-center">
                       <button
-                        onClick={stripeCheckout}
+                        disabled={isProcessing}
+                        onClick={razorpayCheckout}
                         className="block w-full px-5 py-3 transition rounded disabled bg-secondary text-md text-text hover:bg-purple-300"
                       >
-                        Checkout
+                        {isProcessing ? "Processing..." : "Checkout"}
                       </button>
                     </div>
                   </div>

@@ -1,18 +1,18 @@
 import Link from "next/link";
 
-export default function Success() {
+export default function Success(paymentDetail) {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md">
+      <div className="p-8 bg-white rounded-lg shadow-md">
         <div className="flex items-center justify-center">
-          <div className="rounded-full bg-green-100 p-4">
+          <div className="p-4 bg-green-100 rounded-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="2"
               stroke="currentColor"
-              className="h-12 w-12 text-green-500"
+              className="w-12 h-12 text-green-500"
             >
               <path
                 strokeLinecap="round"
@@ -22,17 +22,17 @@ export default function Success() {
             </svg>
           </div>
         </div>
-        <div className="text-center mt-4">
+        <div className="mt-4 text-center">
           <h2 className="text-2xl font-semibold text-gray-800">
             Checkout Successful
           </h2>
-          <p className="text-gray-600 mt-2 max-w-sm">
+          <p className="max-w-sm mt-2 text-gray-600">
             Your order has been received and is being processed. We&apos;ll send
             you an email with more details.
           </p>
           <Link
             href="/"
-            className="block mt-4 text-sm font-medium text-white bg-primary py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring"
+            className="block px-4 py-2 mt-4 text-sm font-medium text-white rounded-md bg-primary hover:bg-primary-dark focus:outline-none focus:ring"
           >
             Continue Shopping
           </Link>
