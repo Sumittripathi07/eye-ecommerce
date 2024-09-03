@@ -4,6 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../lib/CartContext";
 import { useRouter } from "next/router";
 import { signOut, useSession } from "next-auth/react";
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -106,20 +108,52 @@ export default function Header() {
 
             <div className="flex items-center gap-2">
               {session ? (
-                <div className="pr-4 border-r sm:flex sm:gap-2 border-primary">
-                  <div className="h-9 w-9">
-                    <img
-                      className="object-cover object-center w-full h-full rounded-full"
-                      src={session.user.image}
-                      alt={session.user.email}
-                    />
+                // <div className="pr-4 border-r sm:flex sm:gap-2 border-primary">
+                //   <div className="h-9 w-9">
+                //     <img
+                //       onClick={() => signOut()}
+                //       className="object-cover object-center w-full h-full rounded-full"
+                //       src={session.user.image}
+                //       alt={session.user.email}
+                //     />
+                //   </div>
+                // </div>
+                <Menu
+                  as="div"
+                  className="relative inline-block w-16 h-16 text-left"
+                >
+                  <div>
+                    <MenuButton className="inline-flex justify-center gap-x-1.5  px-3 py-2 text-sm font-semibold  shadow-sm  hover:bg-gray-50 ">
+                      <img
+                        className="object-cover object-center w-full h-full rounded-full"
+                        src={session.user.image}
+                        alt={session.user.email}
+                      />
+                    </MenuButton>
                   </div>
-                </div>
+
+                  <MenuItems
+                    onClick={() => signOut()}
+                    transition
+                    className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                  >
+                    <div className="py-1">
+                      <MenuItem>
+                        <a
+                          href="#"
+                          className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                        >
+                          LogOut
+                        </a>
+                      </MenuItem>
+                    </div>
+                  </MenuItems>
+                </Menu>
               ) : (
                 <div className="pr-4 border-r sm:flex sm:gap-2 border-primary">
                   <Link
                     className="hidden font-medium text-md text-text md:flex"
-                    href="/"
+                    href="/components/SignUp"
                   >
                     Account
                   </Link>

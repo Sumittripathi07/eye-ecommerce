@@ -1,6 +1,8 @@
 import Link from "next/link";
 
-export default function Success(paymentDetail) {
+export default function Success({ paymentDetail }) {
+  console.log(paymentDetail);
+
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="p-8 bg-white rounded-lg shadow-md">

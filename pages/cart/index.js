@@ -122,8 +122,8 @@ export default function Cart() {
           }
         },
         prefill: {
-          name: "JOHN TRIPATHI",
-          email: "john@gmail.com",
+          name: "SUMIT TRIPATHI",
+          email: "sumit@gmail.com",
           contact: "999999999",
         },
         theme: {

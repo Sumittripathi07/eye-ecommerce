@@ -38,16 +38,16 @@ export default async function handler(req, res) {
     }
   }
 
-  const orderDoc = await Order.create({
-    line_items,
-    email,
-    name,
-    address,
-    city,
-    country,
-    zip,
-    paid: false,
-  });
+  // const orderDoc = await Order.create({
+  //   line_items,
+  //   email,
+  //   name,
+  //   address,
+  //   city,
+  //   country,
+  //   zip,
+  //   paid: false,
+  // });
 
   // const session = await stripe.checkout.sessions.create({
   //   line_items,
