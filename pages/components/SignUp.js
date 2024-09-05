@@ -1,7 +1,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
-export default function signup(params) {
+export default function SignUp(params) {
   const { data: session } = useSession();
 
   if (session)
