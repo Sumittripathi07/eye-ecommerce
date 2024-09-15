@@ -1,6 +1,6 @@
 import React from "react";
 
-export const SectionTitle = (props) => {
+const SectionTitle = (props) => {
   return (
     <div
       className={`flex w-full flex-col mt-28 ${
@@ -27,3 +27,4 @@ export const SectionTitle = (props) => {
     </div>
   );
 };
+export default SectionTitle;

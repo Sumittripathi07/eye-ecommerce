@@ -7,7 +7,7 @@ import {
   AdjustmentsHorizontalIcon,
   SunIcon,
 } from "@heroicons/react/24/solid";
-import { SectionTitle } from "../components/SectionTitle";
+import SectionTitle from "../components/SectionTitle";
 
 const data = {
   title: "Highlight your benefits",
