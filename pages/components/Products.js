@@ -12,7 +12,7 @@ export default function Products({ products }) {
   const { addProduct } = useContext(CartContext);
 
   return (
-    <div className="bg-white">
+    <div className="mt-20 bg-white">
       <div className="px-4 py-6 mx-auto">
         <h2 className="text-2xl font-bold tracking-tight text-text">
           Our Latest Products

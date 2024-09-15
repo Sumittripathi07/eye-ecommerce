@@ -88,7 +88,7 @@ export default function Header() {
                 <li>
                   <Link
                     className={`text-accent transition hover:text-accent/75 ${
-                      pathname === "/products" ? "text-primary" : ""
+                      pathname === "/about" ? "text-primary" : ""
                     } `}
                     href="/about"
                   >
@@ -98,7 +98,7 @@ export default function Header() {
                 <li>
                   <Link
                     className={`text-accent transition hover:text-accent/75 ${
-                      pathname === "/products" ? "text-primary" : ""
+                      pathname === "/contact" ? "text-primary" : ""
                     } `}
                     href="/contact"
                   >
