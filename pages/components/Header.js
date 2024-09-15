@@ -85,6 +85,26 @@ export default function Header() {
                     All Products
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    className={`text-accent transition hover:text-accent/75 ${
+                      pathname === "/products" ? "text-primary" : ""
+                    } `}
+                    href="/about"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className={`text-accent transition hover:text-accent/75 ${
+                      pathname === "/products" ? "text-primary" : ""
+                    } `}
+                    href="/contact"
+                  >
+                    Contact
+                  </Link>
+                </li>
 
                 {/* <li>
                   <select

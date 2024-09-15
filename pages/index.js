@@ -39,7 +39,7 @@ export default function Home({
   allProducts,
 }) {
   return (
-    <main className={`min-h-screen p-4 bg-background `}>
+    <main className={`min-h-screen p-4 bg-background`}>
       <Hero product={featuredProduct} />
 
       <hr className="h-px my-1 bg-gray-300 border-0" />

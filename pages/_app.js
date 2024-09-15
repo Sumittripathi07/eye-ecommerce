@@ -26,9 +26,10 @@ export default function App({
           >
             <Header />
             <Toaster position="top-center" />
-            <Component {...pageProps} className="sm:mt-36" />
+            <div className="min-h-screen">
+              <Component {...pageProps} className="sm:mt-36" />
+            </div>
             <Footer />
-            
           </main>
         </CartContextProvider>
       </SessionProvider>
