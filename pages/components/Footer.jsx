@@ -69,7 +69,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="mt-4 text-lg text-center text-gray-500">
-          <p>Copyright © 2023-2024 Powered By Eyeware Ecommerce.</p>
+          <p>Copyright © 2024-2025 Powered By Eyeware Ecommerce.</p>
         </div>
       </footer>
     </div>

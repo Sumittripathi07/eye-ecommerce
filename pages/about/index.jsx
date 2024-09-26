@@ -10,48 +10,48 @@ import {
 import SectionTitle from "../components/SectionTitle";
 
 const data = {
-  title: "Highlight your benefits",
-  desc: "You can use this space to highlight your first benefit or a feature of your product. It can also contain an image or Illustration like in the example along with some bullet points.",
+  title: "Our Mission",
+  desc: "Optics Wala is where style meets clarity. We’re passionate about bringing you the perfect combination of fashion-forward design and precise optics to enhance your vision and boost your confidence. Whether you're searching for prescription glasses, sunglasses, or blue-light-blocking lenses, we’ve got you covered with a range of frames to suit every face and personality.",
   image:
     "https://nextly.web3templates.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbenefit-one.a3b4f792.png&w=640&q=75",
   bullets: [
     {
-      title: "Understand your customers",
-      desc: "Then explain the first point breifly in one or two lines.",
+      title: "Fashion Meets Functionality",
+      desc: "We collaborate with top designers to offer frames that balance cutting-edge trends with timeless appeal.",
       icon: <FaceSmileIcon />,
     },
     {
-      title: "Improve acquisition",
-      desc: "Here you can add the next benefit point.",
+      title: "Premium Quality Lenses",
+      desc: "All of our lenses are crafted with precision to ensure optimal vision, UV protection, and scratch resistance.",
       icon: <ChartBarSquareIcon />,
     },
     {
-      title: "Drive customer retention",
-      desc: "This will be your last bullet point in this section.",
+      title: "Affordability",
+      desc: "We’re committed to offering competitive prices so that looking stylish doesn’t break the bank.",
       icon: <CursorArrowRaysIcon />,
     },
   ],
 };
 
 const data2 = {
-  title: "Offer more benefits here",
-  desc: "You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.",
+  title: "Our Vision",
+  desc: "At Optics Wala, we envision a world where eyewear is more than just a necessity—it's an extension of who you are. We believe everyone should have access to quality eyewear that enhances both their vision and their sense of self. Our passion is to inspire confidence through glasses that combine elegance, functionality, and innovation.",
   image:
     "https://nextly.web3templates.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbenefit-two.1d7648d5.png&w=640&q=75",
   bullets: [
     {
-      title: "Mobile Responsive Template",
-      desc: "Nextly is designed as a mobile first responsive template.",
+      title: "Sustainability",
+      desc: "We care about the planet. Our eco-friendly frames are crafted from sustainable materials, reducing our carbon footprint.",
       icon: <DevicePhoneMobileIcon />,
     },
     {
-      title: "Powered by Next.js & TailwindCSS",
-      desc: "This template is powered by latest technologies and tools.",
+      title: "Excellent Customer Service",
+      desc: "From helping you choose the perfect frames to ensuring a seamless delivery, our dedicated team is here to make your experience smooth and enjoyable.",
       icon: <AdjustmentsHorizontalIcon />,
     },
     {
-      title: "Dark & Light Mode",
-      desc: "Nextly comes with a zero-config light & dark mode. ",
+      title: "Quality",
+      desc: "We use the finest materials for both our frames and lenses, ensuring long-lasting wear and superior comfort.",
       icon: <SunIcon />,
     },
   ],
@@ -142,17 +142,18 @@ const index = () => {
         preTitle="Testimonials"
         title="Here's what our customers said"
       >
-        Testimonials is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
+        {/* Testimonials is a great way to increase the brand trust and awareness.
+        Use this section to highlight your popular customers. */}
+        <br />
       </SectionTitle>
       <div>
         <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
           <div className="lg:col-span-2 xl:col-auto">
             <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
               <p className="text-2xl leading-normal ">
-                Share a real <Mark>testimonial</Mark>
-                that hits some of your benefits from one of your popular
-                customer.
+                <Mark>Perfect Fit and Style!</Mark> I’ve always struggled to
+                find glasses that suit my face, but Visionary Eyewear’s virtual
+                try-on made it so easy!
               </p>
 
               <Avatar
@@ -165,8 +166,10 @@ const index = () => {
           <div className="">
             <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
               <p className="text-2xl leading-normal ">
-                Make sure you only pick the <Mark>right sentence</Mark>
-                to keep it short and simple.
+                I was skeptical about buying glasses online, but the quality of
+                Visionary Eyewear is exceptional. I got my prescription glasses
+                for <Mark> half the price </Mark> I would have paid in-store,
+                and they feel just as premium. Definitely worth it!
               </p>
 
               <Avatar
@@ -179,8 +182,9 @@ const index = () => {
           <div className="">
             <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
               <p className="text-2xl leading-normal ">
-                This is an <Mark>awesome</Mark> landing page template I&apos;ve
-                seen. I would use this for anything.
+                The frames are lightweight, durable, and I love how they look.
+                Plus, the blue-light lenses have been a lifesaver for working on
+                my computer.
               </p>
 
               <Avatar
