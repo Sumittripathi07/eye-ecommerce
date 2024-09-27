@@ -8,7 +8,7 @@ const Contact = () => {
           <div class="container flex flex-col flex-1 px-6 py-12 mx-auto">
             <div class="flex-1 lg:flex lg:items-center lg:-mx-6">
               <div class="text-black lg:w-1/2 lg:mx-6">
-                <h1 class="text-2xl font-semibold capitalize lg:text-3xl">
+                <h1 class="text-2xl font-semibold capitalize lg:text-3xl">  
                   Get in touch with our team 24/7
                 </h1>
 
