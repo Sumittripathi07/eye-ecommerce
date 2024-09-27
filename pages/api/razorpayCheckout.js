@@ -6,6 +6,8 @@ const razorpay = new Razorpay({
 });
 
 export default async function POST(req, res) {
+  console.log(req.body.total);
+
   try {
     const order = await razorpay.orders.create({
       amount: req.body.total * 100, // Amount in paise
