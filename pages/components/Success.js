@@ -28,6 +28,7 @@ export default function Success({ paymentDetail }) {
           <h2 className="text-2xl font-semibold text-gray-800">
             Checkout Successful
           </h2>
+          {/* <h3>razorpay_payment_id: {paymentDetail.razorpay_payment_id}</h3> */}
           <p className="max-w-sm mt-2 text-gray-600">
             Your order has been received and is being processed. We&apos;ll send
             you an email with more details.

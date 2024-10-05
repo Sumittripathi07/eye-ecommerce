@@ -3,17 +3,23 @@ import { CartContext } from "../../lib/CartContext";
 import axios from "axios";
 import Link from "next/link";
 import Spinner from "../components/Spinner";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Success from "../components/Success";
 import toast from "react-hot-toast";
+import { useAuth } from "@clerk/nextjs";
+import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 
 export default function Cart() {
+  const { isLoaded, isSignedIn, user } = useUser();
+  const { userId } = useAuth();
+
   const { cartProducts, removeProduct, addProduct, clearCart } =
     useContext(CartContext);
   const [products, setProducts] = useState([]);
   const [address, setAddress] = useState("");
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState(user?.emailAddresses || "");
+  const [name, setName] = useState(user?.fullName || "");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [zip, setZip] = useState("");
@@ -23,15 +29,20 @@ export default function Cart() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentDetail, setPaymentDetail] = useState();
 
+  // {
+  //   user && setName(user.fullName);
+  // }
+  // {
+  //   user ? setEmail(user.emailAddresses) : <></>;
+  // }
+
   useEffect(() => {
     setLoading(true);
-
     if (cartProducts.length > 0) {
       axios.post("/api/cart", { ids: cartProducts }).then((response) => {
         setProducts(response.data);
         setLoading(false);
       });
-      console.log(products);
     } else {
       setProducts([]);
       setLoading(false);
@@ -78,6 +89,9 @@ export default function Cart() {
   };
 
   async function razorpayCheckout(params) {
+    console.log(name);
+    console.log(email);
+
     setIsProcessing(true);
     const AMOUNT = total;
     try {
@@ -103,8 +117,8 @@ export default function Cart() {
           setPaymentDetail(res);
 
           const response = await axios.post("/api/checkout", {
-            email: session.user.email,
-            name: session.user.name,
+            name,
+            email,
             address,
             country,
             zip,
@@ -148,7 +162,7 @@ export default function Cart() {
     );
   }
 
-  if (session) {
+  if (userId) {
     return (
       <>
         <section className="flex justify-between space-x-4 max-md:flex-col ">
@@ -216,6 +230,7 @@ export default function Cart() {
                                       (id) => id === product._id
                                     ).length
                                   }
+                                  readOnly
                                   className="h-10 w-16 rounded border border-secondary text-primary font-bold text-center [-moz-appearance:_textfield] sm:text-md [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
                                 />
 
@@ -243,6 +258,7 @@ export default function Cart() {
                         type="radio"
                         name="radio"
                         checked
+                        readOnly
                       />
                       <span className="box-content absolute block w-3 h-3 -translate-y-1/2 bg-white border-8 border-gray-300 rounded-full peer-checked:border-gray-700 right-4 top-1/2"></span>
                       <label
@@ -270,7 +286,6 @@ export default function Cart() {
                         id="radio_2"
                         type="radio"
                         name="radio"
-                        checked
                       />
                       <span className="box-content absolute block w-3 h-3 -translate-y-1/2 bg-white border-8 border-gray-300 rounded-full peer-checked:border-gray-700 right-4 top-1/2"></span>
                       <label
@@ -371,7 +386,8 @@ export default function Cart() {
                         type="email"
                         name="email"
                         className="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
-                        value={session.user.email}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         placeholder="Email"
                       />
                     </div>
@@ -383,7 +399,8 @@ export default function Cart() {
                         type="text"
                         name="name"
                         className="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
-                        value={session.user.name}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         placeholder="Full name"
                       />
                     </div>
@@ -470,11 +487,10 @@ export default function Cart() {
             You should sign Up to view cart Items
           </p>
 
-          <button
-            onClick={() => signIn("google")}
-            className="inline-block px-5 py-3 mt-6 text-sm font-medium rounded text-text bg-primary hover:bg-primary focus:outline-none focus:ring"
-          >
-            Login / Register
+          <button className="inline-block px-5 py-3 mt-6 text-sm font-medium rounded text-text bg-primary hover:bg-primary focus:outline-none focus:ring">
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
           </button>
         </div>
       </div>

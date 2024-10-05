@@ -1,15 +1,24 @@
 import { mongooseConnect } from "@/lib/mongoose";
 import { Order } from "@/models/Order";
 import { Product } from "@/models/Product";
-const stripe = require("stripe")(process.env.STRIPE_KEY);
+// const stripe = require("stripe")(process.env.STRIPE_KEY);
+// import { currentUser } from "@clerk/nextjs/server";
 
 export default async function handler(req, res) {
+  console.log("INSIDE checkout");
+
   if (req.method !== "POST") {
     res.json("Should be a post request");
     return;
   }
 
-  const { email, name, address, city, country, zip, cartProducts } = req.body;
+  // const user = await currentUser();
+  // let email = user?.emailAddresses;
+  // let name = user?.fullName;
+  // console.log("email", email);
+  // console.log("name", name);
+
+  const { name, email, address, city, country, zip, cartProducts } = req.body;
 
   await mongooseConnect();
 
@@ -38,16 +47,16 @@ export default async function handler(req, res) {
     }
   }
 
-  // const orderDoc = await Order.create({
-  //   line_items,
-  //   email,
-  //   name,
-  //   address,
-  //   city,
-  //   country,
-  //   zip,
-  //   paid: false,
-  // });
+  const orderDoc = await Order.create({
+    line_items,
+    email,
+    name,
+    address,
+    city,
+    country,
+    zip,
+    paid: true,
+  });
 
   // const session = await stripe.checkout.sessions.create({
   //   line_items,

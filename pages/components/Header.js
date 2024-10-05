@@ -3,31 +3,20 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../lib/CartContext";
 import { useRouter } from "next/router";
-import { signOut, useSession } from "next-auth/react";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState("");
-  const [categories, setCategories] = useState([]);
 
   const { cartProducts } = useContext(CartContext);
   const router = useRouter();
   const { pathname } = router;
-  const { data: session } = useSession();
 
   useEffect(() => {
     // Update the currentPath state on client side
     setCurrentPath(window.location.pathname);
-    fetchCategories();
   }, []);
-
-  function fetchCategories() {
-    axios.get("/api/categories").then((result) => {
-      setCategories(result.data);
-    });
-  }
 
   const toggleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
@@ -127,78 +116,12 @@ export default function Header() {
             </nav>
 
             <div className="flex items-center gap-2">
-              {session ? (
-                // <div className="pr-4 border-r sm:flex sm:gap-2 border-primary">
-                //   <div className="h-9 w-9">
-                //     <img
-                //       onClick={() => signOut()}
-                //       className="object-cover object-center w-full h-full rounded-full"
-                //       src={session.user.image}
-                //       alt={session.user.email}
-                //     />
-                //   </div>
-                // </div>
-                <Menu
-                  as="div"
-                  className="relative inline-block w-16 h-16 text-left"
-                >
-                  <div>
-                    <MenuButton className="inline-flex justify-center gap-x-1.5  px-3 py-2 text-sm font-semibold  shadow-sm  hover:bg-gray-50 ">
-                      <img
-                        className="object-cover object-center w-full h-full rounded-full"
-                        src={session.user.image}
-                        alt={session.user.email}
-                      />
-                    </MenuButton>
-                  </div>
-
-                  <MenuItems
-                    onClick={() => signOut()}
-                    transition
-                    className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
-                  >
-                    <div className="py-1">
-                      <MenuItem>
-                        <a
-                          href="#"
-                          className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
-                        >
-                          LogOut
-                        </a>
-                      </MenuItem>
-                    </div>
-                  </MenuItems>
-                </Menu>
-              ) : (
-                <div className="pr-4 border-r sm:flex sm:gap-2 border-primary">
-                  <Link
-                    className="hidden font-medium text-md text-text md:flex"
-                    href="/components/SignUp"
-                  >
-                    Account
-                  </Link>
-                  <Link
-                    className="hidden font-medium text-md text-text max-md:flex md:hidden"
-                    href="/"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              )}
-
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton showName />
+              </SignedIn>
               <div className="flow-root ml-4 lg:ml-4">
                 <Link href="/cart" className="flex items-center p-2 -m-2 group">
                   <svg
@@ -303,12 +226,6 @@ export default function Header() {
                         >
                           Categories
                         </Link>
-                      </li>
-
-                      <li>
-                        {session && (
-                          <button onClick={() => signOut()}>logout</button>
-                        )}
                       </li>
                     </ul>
                   </nav>
