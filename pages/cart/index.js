@@ -481,19 +481,19 @@ export default function Cart() {
 
   return (
     <>
-      <div className="grid h-screen px-4 bg-white place-content-center">
-        <div className="text-center">
-          <p className="mt-4 text-2xl text-text">
-            You should sign Up to view cart Items
-          </p>
+      <SignedOut>
+        <div className="grid h-screen px-4 bg-white place-content-center">
+          <div className="text-center">
+            <p className="mt-4 text-2xl text-text">
+              You should sign Up to view cart Items
+            </p>
 
-          <button className="inline-block px-5 py-3 mt-6 text-sm font-medium rounded text-text bg-primary hover:bg-primary focus:outline-none focus:ring">
-            <SignedOut>
+            <button className="inline-block px-5 py-3 mt-6 text-sm font-medium rounded text-text bg-primary hover:bg-primary focus:outline-none focus:ring">
               <SignInButton />
-            </SignedOut>
-          </button>
+            </button>
+          </div>
         </div>
-      </div>
+      </SignedOut>
     </>
   );
 }
