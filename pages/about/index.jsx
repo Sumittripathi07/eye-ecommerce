@@ -8,6 +8,7 @@ import {
   SunIcon,
 } from "@heroicons/react/24/solid";
 import SectionTitle from "../components/SectionTitle";
+import Developers from "../components/Developers";
 
 const data = {
   title: "Our Mission",
@@ -56,6 +57,27 @@ const data2 = {
     },
   ],
 };
+
+const developerData = [
+  {
+    name: "Sumit Tripathi",
+    img: "https://avatars.githubusercontent.com/u/83841586?v=4",
+    role1: "Founder and CEO",
+    role2: "Backend Developer & DevOps Engg",
+    facebookUrl: "",
+    githubUrl: "https://github.com/Sumittripathi07",
+    linkedinUrl: "https://www.linkedin.com/in/sumittripathi07/",
+  },
+  {
+    name: "Dayyan Shaikh",
+    img: "",
+    role1: "Founder and CEO",
+    role2: "Frontend Developer & UI/UX",
+    facebookUrl: "",
+    githubUrl: "",
+    linkedinUrl: "",
+  },
+];
 
 const index = () => {
   return (
@@ -137,7 +159,6 @@ const index = () => {
         </div>
       </div>
       {/* ======================Testimonials--------------------- */}
-
       <SectionTitle
         preTitle="Testimonials"
         title="Here's what our customers said"
@@ -195,6 +216,15 @@ const index = () => {
             </div>
           </div>
         </div>
+      </div>
+      {/* ======================Developers--------------------- */}
+      <SectionTitle preTitle="Our Team" title="Our CEO's and Developers">
+        {/* Testimonials is a great way to increase the brand trust and awareness.
+        Use this section to highlight your popular customers. */}
+        <br />
+      </SectionTitle>
+      <div className="flex items-center justify-around ">
+        <Developers developerData={developerData} />
       </div>
     </>
   );
