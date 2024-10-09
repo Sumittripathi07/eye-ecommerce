@@ -55,6 +55,12 @@ const Chatbot = ({ isOpen, onClose }) => {
       lowerInput.includes("options")
     ) {
       return "We accept various payment methods, including credit/debit cards, UPI, and other secure payment options.";
+    } else if (
+      lowerInput.includes("number") ||
+      lowerInput.includes("call") ||
+      lowerInput.includes("contact")
+    ) {
+      return "Sumit Tripathi: 9999999999 \n Dayyan Shaikh: 8888888888";
     } else {
       return "I'm sorry, I didn't quite understand that. Could you please rephrase your question or ask about our products, prescriptions, shipping, or return policy?";
     }
