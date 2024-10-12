@@ -1,12 +1,12 @@
 import React from "react";
 
 const Developers = ({ developerData }) => {
-  console.log(developerData);
+  // console.log(developerData);
 
   return (
     <>
       {developerData.map((data, index) => {
-        console.log(data.name);
+        // console.log(data.name);
         return (
           <div className="card" key={index}>
             <div className="card-photo">
