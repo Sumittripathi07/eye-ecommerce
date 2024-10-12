@@ -36,7 +36,7 @@ const Chatbot = ({ isOpen, onClose }) => {
     ) {
       return "We have a 30-day return and exchange policy. If you're not satisfied with your purchase, you can return or exchange it within 30 days of delivery.";
     } else if (lowerInput.includes("shipping")) {
-      return "We offer free standard shipping on all orders over $100. Expedited shipping options are also available at checkout.";
+      return "We offer free standard shipping on all orders. Expedited shipping options are also available at checkout.";
     } else if (lowerInput.includes("frame") || lowerInput.includes("style")) {
       return "We have a variety of frame styles including classic, modern, and trendy options. You can browse our collection on our website or use our virtual try-on feature to see how they look on you.";
     } else if (lowerInput.includes("customize")) {
@@ -62,7 +62,7 @@ const Chatbot = ({ isOpen, onClose }) => {
     ) {
       return "Sumit Tripathi: 9999999999 \n Dayyan Shaikh: 8888888888";
     } else {
-      return "I'm sorry, I didn't quite understand that. Could you please rephrase your question or ask about our products, prescriptions, shipping, or return policy?";
+      return "I'm sorry, I didn't quite understand that. Could you please rephrase your question or ask about prescriptions, warrenty, payment options, shipping, or return policy?";
     }
   };
 
