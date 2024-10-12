@@ -41,7 +41,6 @@ export default function Home({
   return (
     <main className={`min-h-screen p-4 bg-background`}>
       <Hero product={featuredProduct} />
-
       <Products products={newProducts} />
       <hr className="h-px my-1 bg-gray-300 border-0" />
       <Collection product={collectionProduct1} />
