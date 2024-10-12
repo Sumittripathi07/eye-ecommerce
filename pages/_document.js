@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
@@ -8,6 +9,19 @@ export default function Document() {
           src="https://checkout.razorpay.com/v1/checkout.js"
           async
         ></script>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NSDWEMX58B"
+        ></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js', new Date());
+ 
+            gtag('config', 'G-NSDWEMX58B');
+        `}
+        </Script>
       </Head>
       <body>
         <Main />
