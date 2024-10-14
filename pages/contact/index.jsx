@@ -1,9 +1,24 @@
-import React from "react";
-import { useState } from "react";
+"use client";
+import React, { useState } from "react";
 import { useUser } from "@clerk/nextjs";
+import Loading from "../components/loading/Loading";
 
 const Contact = () => {
-  const { user } = useUser();
+  const { isLoaded, isSignedIn, user } = useUser();
+
+  if (!isLoaded && !isSignedIn) {
+    return (
+      <section className="min-h-screen bg-cover ">
+        <div className="flex flex-col min-h-screen ">
+          <div className="container flex flex-col flex-1 px-6 py-12 mx-auto">
+            <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
+              <Loading />
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   const [name, setName] = useState(user?.fullName || "");
   const [email, setEmail] = useState(user?.emailAddresses || "");
