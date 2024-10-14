@@ -8,33 +8,25 @@ import Success from "../components/Success";
 import toast from "react-hot-toast";
 import { useAuth } from "@clerk/nextjs";
 import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import Loading from "../components/loading/Loading";
 import { useUser } from "@clerk/nextjs";
 
 export default function Cart() {
-  const { isLoaded, isSignedIn, user } = useUser();
   const { userId } = useAuth();
+  const { isLoaded, isSignedIn, user } = useUser();
 
   const { cartProducts, removeProduct, addProduct, clearCart } =
     useContext(CartContext);
   const [products, setProducts] = useState([]);
   const [address, setAddress] = useState("");
-  const [email, setEmail] = useState(user?.emailAddresses || "");
-  const [name, setName] = useState(user?.fullName || "");
+
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [zip, setZip] = useState("");
   const [loading, setLoading] = useState(true);
-  const { data: session } = useSession();
   const [isSuccess, setIsSuccess] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentDetail, setPaymentDetail] = useState();
-
-  // {
-  //   user && setName(user.fullName);
-  // }
-  // {
-  //   user ? setEmail(user.emailAddresses) : <></>;
-  // }
 
   useEffect(() => {
     setLoading(true);
@@ -154,10 +146,42 @@ export default function Cart() {
     }
   }
 
+  // if (!isLoaded && !isSignedIn) {
+  //   return (
+  //     <section className="min-h-screen bg-cover ">
+  //       <div className="flex flex-col min-h-screen ">
+  //         <div className="container flex flex-col flex-1 px-6 py-12 mx-auto">
+  //           <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
+  //             <Loading />
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </section>
+  //   );
+  // }
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
   if (isSuccess) {
     return (
       <>
         <Success paymentDetail={paymentDetail} />
+      </>
+    );
+  }
+
+  if (!isLoaded && !isSignedIn) {
+    return (
+      <>
+        <section className="min-h-screen bg-cover ">
+          <div className="flex flex-col min-h-screen ">
+            <div className="container flex flex-col flex-1 px-6 py-12 mx-auto">
+              <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
+                <Loading />
+              </div>
+            </div>
+          </div>
+        </section>
       </>
     );
   }
