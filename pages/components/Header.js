@@ -48,9 +48,7 @@ export default function Header() {
               />
             </svg>
 
-            <span> / Chasma Wala</span>
-
-            <span> / Eyeware</span>
+            <span> / Optics Wala</span>
           </Link>
 
           <div className="flex items-center justify-end flex-1 md:justify-between">
