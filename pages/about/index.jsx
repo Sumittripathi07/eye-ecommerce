@@ -64,18 +64,18 @@ const developerData = [
     img: "https://avatars.githubusercontent.com/u/83841586?v=4",
     role1: "Founder and CEO",
     role2: "Backend Developer & DevOps Engg",
-    facebookUrl: "",
+    facebookUrl: "https://www.facebook.com/sumittripathi07",
     githubUrl: "https://github.com/Sumittripathi07",
     linkedinUrl: "https://www.linkedin.com/in/sumittripathi07/",
   },
   {
     name: "Dayyan Shaikh",
-    img: "",
+    img: "https://avatars.githubusercontent.com/u/124500066?v=4",
     role1: "Founder and CEO",
     role2: "Frontend Developer & UI/UX",
-    facebookUrl: "",
-    githubUrl: "",
-    linkedinUrl: "",
+    facebookUrl: "https://www.facebook.com/profile.php?id=100006539163202",
+    githubUrl: "https://github.com/dayyan-shaikh",
+    linkedinUrl: "https://www.linkedin.com/in/dayyan-shaikh/",
   },
 ];
 
