@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import Loading from "../components/loading/Loading";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -20,8 +21,25 @@ const Contact = () => {
     );
   }
 
-  const [name, setName] = useState(user?.fullName || "");
-  const [email, setEmail] = useState(user?.emailAddresses || "");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+
+    if ((name, email, message)) {
+      const response = await fetch("/api/sendMail", {
+        headers: { "Content-Type": "application/json" },
+        method: "POST",
+        body: JSON.stringify({ username: name, email, message }),
+      });
+    }
+    setName("");
+    setEmail("");
+    setMessage("");
+    toast.success("Thank You for Your Interest!!");
+  };
 
   return (
     <div>
@@ -169,10 +187,15 @@ const Contact = () => {
                       <textarea
                         className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                         placeholder="Message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                       ></textarea>
                     </div>
 
-                    <button className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
+                    <button
+                      className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                      onClick={handelSubmit}
+                    >
                       get in touch
                     </button>
                   </form>
