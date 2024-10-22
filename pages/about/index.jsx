@@ -81,7 +81,7 @@ const developerData = [
 
 const index = () => {
   return (
-    <>
+    <div>
       <div className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ">
         <div className={`flex items-center justify-center w-full lg:w-1/2`}>
           <div>
@@ -226,7 +226,7 @@ const index = () => {
       <div className="flex items-center justify-around ">
         <Developers developerData={developerData} />
       </div>
-    </>
+    </div>
   );
 };
 

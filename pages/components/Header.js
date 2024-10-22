@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../lib/CartContext";
 import { useRouter } from "next/router";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+// import logo from "../../public/assets/icons/index";
 
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -34,6 +35,15 @@ export default function Header() {
             href="/"
           >
             <svg
+              fill="currentColor"
+              viewBox="0 0 16 16"
+              height="3em"
+              width="3em"
+              // {...props}
+            >
+              <path d="M4 6a2 2 0 110 4 2 2 0 010-4zm2.625.547a3 3 0 00-5.584.953H.5a.5.5 0 000 1h.541A3 3 0 007 8a1 1 0 012 0 3 3 0 005.959.5h.541a.5.5 0 000-1h-.541a3 3 0 00-5.584-.953A1.993 1.993 0 008 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -46,7 +56,7 @@ export default function Header() {
                 strokeLinejoin="round"
                 d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"
               />
-            </svg>
+            </svg> */}
 
             <span> / Optics Wala</span>
           </Link>
