@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import Loading from "../components/loading/Loading";
 import toast from "react-hot-toast";
+import Link from "next/link";
+
 
 const Contact = () => {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -56,11 +58,11 @@ const Contact = () => {
                 Our dedicated team is available 24/7 to assist you with any inquiries or support you need. Whether it's day or night, you can count on us to provide prompt, reliable service and ensure that all your questions are answered. Reach out at any time, and we'll be here to help!
                 </p>
 
-                <a href="/about">
+                <Link href="/about">
                 <button className="px-8 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
                   About Us
                 </button>
-                </a>
+                </Link>
 
                 <div className="mt-6 md:mt-8">
 
