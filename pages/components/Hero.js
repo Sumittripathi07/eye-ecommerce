@@ -16,7 +16,7 @@ export default function Hero({ product }) {
               Wear the <span className="text-5xl sm:text-7xl">Best</span>{" "}
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-            Welcome to <b className="text-black">OpticsWala</b>, where style meets clarity! Discover a stunning collection of eyewear that blends fashion-forward designs with cutting-edge vision technology. 
+            Welcome to <b className="text-black">ClearView Optics</b>, where style meets clarity! Discover a stunning collection of eyewear that blends fashion-forward designs with cutting-edge vision technology. 
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
