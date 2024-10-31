@@ -58,7 +58,7 @@ export default function Header() {
               />
             </svg> */}
 
-            <span> / Optics Wala</span>
+            <span> / ClearView Optics</span>
           </Link>
 
           <div className="flex items-center justify-end flex-1 md:justify-between">
