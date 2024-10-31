@@ -59,7 +59,10 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Product Name Screen Shot][product-screenshot]
+![Product Name Screen Shot][product-screenshot2]
+![Product Name Screen Shot][product-screenshot3]
+![Product Name Screen Shot][product-screenshot4]
 
 At Eyewear Ecommerce, we bring you a seamless and sophisticated online shopping experience for all your optical needs. Whether you're searching for the latest eyewear trends, prescription glasses, or contact lenses, OPTICS WALA has you covered. Our platform, built using the powerful MERN stack (MongoDB, Express.js, React, and Node.js), ensures a fast, secure, and user-friendly interface that caters to all your vision care requirements.
 
@@ -136,18 +139,6 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ROADMAP -->
-
 ## Contributing
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
@@ -177,8 +168,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 -->
 
-<!-- CONTACT -->
-
 ## Contact
 
 Sumit Tripathi - [@sumittripathi07](https://www.linkedin.com/in/sumittripathi07/) - sumit.tpt07@gmail.com
@@ -206,7 +195,10 @@ Project Link: [https://github.com/Sumittripathi07/eye-ecommerce](https://github.
 [Clerk]: https://img.shields.io/badge/-Clerk-6C47FF?style=flat&logo=clerk&logoColor=white
 [Tailwind]: https://img.shields.io/badge/Tailwind_CSS-black?style=for-the-badge&logo=tailwind-css&logoColor=38B2AC
 [Razorpay]: https://img.shields.io/badge/Razorpay-02042B?style=for-the-badge&logo=razorpay&logoColor=3395FF
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: ./public/assets/images/1.png
+[product-screenshot2]: ./public/assets/images/2.png
+[product-screenshot3]: ./public/assets/images/3.png
+[product-screenshot4]: ./public/assets/images/4.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
