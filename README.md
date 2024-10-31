@@ -17,7 +17,7 @@
 <h3 align="center">Eyewear Ecommerce</h3>
 
   <p align="center">
-    An Ecommerce store for alll kinds of Eyeglasses.
+    An Ecommerce store for all kinds of Eyeglasses.
     <br />
     <a href="https://github.com/Sumittripathi07/eye-ecommerce"><strong>Explore the docs »</strong></a>
     <br />
@@ -63,6 +63,10 @@
 ![Product Name Screen Shot][product-screenshot2]
 ![Product Name Screen Shot][product-screenshot3]
 ![Product Name Screen Shot][product-screenshot4]
+![Product Name Screen Shot][product-screenshot5]
+![Product Name Screen Shot][product-screenshot6]
+![Product Name Screen Shot][product-screenshot7]
+![Product Name Screen Shot][product-screenshot8]
 
 At Eyewear Ecommerce, we bring you a seamless and sophisticated online shopping experience for all your optical needs. Whether you're searching for the latest eyewear trends, prescription glasses, or contact lenses, OPTICS WALA has you covered. Our platform, built using the powerful MERN stack (MongoDB, Express.js, React, and Node.js), ensures a fast, secure, and user-friendly interface that caters to all your vision care requirements.
 
@@ -199,6 +203,10 @@ Project Link: [https://github.com/Sumittripathi07/eye-ecommerce](https://github.
 [product-screenshot2]: ./public/assets/images/2.png
 [product-screenshot3]: ./public/assets/images/3.png
 [product-screenshot4]: ./public/assets/images/4.png
+[product-screenshot5]: ./public/assets/images/5.png
+[product-screenshot6]: ./public/assets/images/6.png
+[product-screenshot7]: ./public/assets/images/7.png
+[product-screenshot8]: ./public/assets/images/8.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
